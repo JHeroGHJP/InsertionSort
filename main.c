@@ -4,6 +4,25 @@
 
 #define tamanho 10
 
+int InsertionSort (int vetor[])
+{
+    int atual, j;
+    
+    for (int i = 1; i < tamanho; i++)
+    {
+        atual = vetor[i];
+        j = i - 1;
+        
+        while ((j >= 0) && (atual < vetor[j]))
+        {
+            vetor[j + 1] = vetor[j];
+            j = j - 1;
+        }
+        
+        vetor[j + 1] = atual;
+    }
+}
+
 void preencher (int vetor[])
 {
     for (int i = 0; i < tamanho; i++)
@@ -31,6 +50,10 @@ void main()
     int vetor[tamanho];
     
     preencher (vetor);
+    
+    mostrar (vetor);
+    
+    InsertionSort (vetor);
     
     mostrar (vetor);
 }
