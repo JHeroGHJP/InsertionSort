@@ -11,12 +11,10 @@ int InsertionSort (int vetor[])
     for (int i = 1; i < tamanho; i++)
     {
         atual = vetor[i];
-        j = i - 1;
         
-        while ((j >= 0) && (atual < vetor[j]))
+        for (j = i - 1; (j >= 0) && (atual < vetor[j]); j--)
         {
             vetor[j + 1] = vetor[j];
-            j = j - 1;
         }
         
         vetor[j + 1] = atual;
